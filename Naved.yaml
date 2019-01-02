@@ -1,0 +1,122 @@
+swagger: '2.0'
+info:
+  title: Naved
+  description: ''
+  version: '1.0'
+host: elastic.snaplogic.com:443
+basePath: /api/1/rest/slsched/feed/Emirates_Training/IMSProjectSpace/Naved
+schemes:
+- https
+- 
+paths:
+  /CSVFileSplitter Task:
+    get:
+      produces: []
+      responses:
+        '200':
+          description: OK
+  /REST Task:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - in: query
+        name: Lat
+        type: string
+        description: ''
+        required: false
+        default: '37.8267'
+      - in: query
+        name: Long
+        type: string
+        description: ''
+        required: false
+        default: '-122.4233'
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: OK
+  /REST POST Task:
+    post:
+      description: "JSON Parser is required to parse input JSON to get the input values\
+        \ used in REST GET.\nIf we want to use the entire JSON input as such then\
+        \ we dont need to use JSON parse. We can pass Pipeline parameters (default)\
+        \ or via Postman to operate upon input JSON."
+      consumes: []
+      parameters:
+      - in: query
+        name: Lat
+        type: string
+        description: ''
+        required: false
+        default: '10'
+      - in: query
+        name: Long
+        type: string
+        description: ''
+        required: false
+        default: '20'
+      - in: body
+        name: input0
+        description: ''
+        schema:
+          properties:
+            Lat:
+              type: string
+            Long:
+              type: string
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: OK
+          schema:
+            items:
+              properties:
+                original:
+                  type: object
+            type: array
+  /Pipelinedocument Task:
+    post:
+      consumes: []
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: OK
+  /TestDocument:
+    post:
+      consumes: []
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: OK
+  /Pipelinedocument-Ultra:
+    get:
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: OK
+  /REST POST Task -Ultra:
+    get:
+      description: "JSON Parser is required to parse input JSON to get the input values\
+        \ used in REST GET.\nIf we want to use the entire JSON input as such then\
+        \ we dont need to use JSON parse. We can pass Pipeline parameters (default)\
+        \ or via Postman to operate upon input JSON."
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: OK
+          schema:
+            properties:
+              original:
+                type: object
+securityDefinitions:
+  basicAuth:
+    type: basic
+security:
+- basicAuth: []
